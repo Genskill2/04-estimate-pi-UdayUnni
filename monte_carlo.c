@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-
+#define M_PI 3.14159265358979323846
 float mc_pi(int);
 
 float frandom() {
@@ -38,6 +38,20 @@ int main(void) {
     }
   }
 }
-
-
-
+float mc_pi(int f)
+{float a,b;
+int out=1,in=1;
+double dist,dist1;
+  for (int i=1;i<=f;i++)
+  {a=frandom();
+   b=frandom();
+   dist1=(a*a)+(b*b);
+   dist=sqrt(dist1);
+   if(dist<=1)
+   {in++;}
+   else
+   {out++;}
+  }
+float pi=(4*(float)in/(float)f);
+ return pi;
+}
