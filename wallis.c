@@ -2,13 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#define M_PI 3.14159265358979323846
 
-float wallis_pi(int f){
-  float pie=1,n=(float)f;
-  for (float i=1;i<=n;i++)
-  {pie=(pie)*((4*i*i)/((4*i*i)-1));}
-  float pi=2*pie;
-  return pi;
+float wallis_pi(int);
 int main(void) {
   float pi;
   for (int i=0; i<5; i++) {
@@ -26,5 +22,14 @@ int main(void) {
       abort();
     }
   }
+}
+
+float wallis_pi(int f)
+  {
+  float pie=1,n=(float)f;
+  for (float i=1;i<=n;i++)
+  {pie=(pie)*((4*i*i)/((4*i*i)-1));}
+  float pi=2*pie;
+  return pi;
 }
 
